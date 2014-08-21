@@ -1,0 +1,76 @@
+<html>
+
+<head>
+	<title>Mixin</title>
+	<link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+	<meta charset="utf-8">
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' /> <!-- Prevents autozoom on mobile devices -->
+
+	<link rel="stylesheet" type="text/css" href="drag-and-scroll/style.css" media="screen" />
+
+	<script type="text/javascript" src="drag-and-scroll/jquery-1.js"></script>
+	<script type="text/javascript" src="drag-and-scroll/scrollsync.js"></script>
+	<script type="text/javascript" src="drag-and-scroll/dragscrollable.js"></script>
+
+	<script type="text/javascript">
+		$(function() {
+		
+		// Set drag scroll on first descendant of class dragger on both selected elements
+		$('#viewport').
+			dragscrollable({dragSelector: '.dragger:first', acceptPropagatedEvent: false});
+		});
+
+	</script>
+
+</head>
+
+
+<body>
+	
+<!-- Top Status Bar & Bottom Tooltip Bar -->
+
+<div id="viewport" class="fixed-container">
+
+	<div class="status-bar visible borderized">
+		<p style="margin-top:auto; margin-bottom: auto; line-height: 1;"><strong>Brachamul</strong> | 430 &#8517; | Warning &#9888; | Coffee &#9749;</p>
+		<img class="menu" src="i/gear.svg">
+		<div class="menu-submenu">
+			<ul class="borderized">
+				<li>My Office</li>
+				<li>Sign Out</li>
+			</ul>
+		</div>
+	</div>
+
+
+	<div class="tooltip-bar visible borderized">
+		<table><tr><td>
+		Standing competitors : 12 &#9878; | Annual Product : 8203 &#8517;  | Time 	since arrival : 28 years
+		</td></tr></table>
+	</div>
+
+	<map id="1044-273" name="slot3">
+		<area href="#1044-273" shape="poly" coords="30,0,61,15,31,31,0,16" alt="Slot Name">
+	</map>
+	
+	<div class="tooltip visible borderized">
+		<a href="#_"><img class="close-tooltip" src="i/cross.svg"></a>
+		<table><tr><td>
+			<h1>Workshop</h1>
+			Owned by Brachamul | 
+			Workers : 5 &#9874;
+		</td></tr></table>
+	</div>
+
+
+</div>
+
+
+<!-- Actual Content -->
+<div id="base" class="borderized dragger mastermap">
+
+
+</div>
+
+</body>
+</html>

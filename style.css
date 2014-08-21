@@ -1,16 +1,6 @@
 @import url(reset.css); /* resets all styles */
 
-/*	Fonts
-
-	@import url(http://fonts.googleapis.com/css?family=Redressed);
-	@import url(http://fonts.googleapis.com/css?family=Loved+by+the+King);
-	@import url(http://fonts.googleapis.com/css?family=Ruge+Boogie&subset=latin,latin-ext);
-	@import url(http://fonts.googleapis.com/css?family=Norican&subset=latin,latin-ext);
-	@import url(http://fonts.googleapis.com/css?family=Berkshire+Swash&subset=latin,latin-ext);
-	@import url(http://fonts.googleapis.com/css?family=Clicker+Script&subset=latin,latin-ext);
-	@import url(http://fonts.googleapis.com/css?family=Merienda:400,700&subset=latin,latin-ext);
-	
-*/
+@import url(drag-and-scroll/style.css); /* styling of elements for scrolling */
 
 	@font-face {
 	  font-family: 'Berkshire Swash';
@@ -82,7 +72,7 @@ h1 {
  *
  */
 
-#mastermap img
+.mastermap img
 { z-index: 1; }
 /* Images of buildings are above the map. */
 
@@ -260,7 +250,7 @@ map area
  *
  */
  
-#mastermap {
+.mastermap {
 	font-size: 0px;
 	position: relative;
 	width: 2000px;
@@ -271,15 +261,15 @@ map area
 }
 
 
-#mastermap .line {
+.mastermap .line {
 	margin-bottom: -16px;
 }
 
-#mastermap .odd {
+.mastermap .odd {
 	margin-left: 31px;
 }
 
-#mastermap .single {
+.mastermap .single {
 	height: 32px;
 	width: 62px;
 	margin-left: -15px;
