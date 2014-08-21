@@ -1,0 +1,337 @@
+@import url(reset.css); /* resets all styles */
+
+/*	Fonts
+
+	@import url(http://fonts.googleapis.com/css?family=Redressed);
+	@import url(http://fonts.googleapis.com/css?family=Loved+by+the+King);
+	@import url(http://fonts.googleapis.com/css?family=Ruge+Boogie&subset=latin,latin-ext);
+	@import url(http://fonts.googleapis.com/css?family=Norican&subset=latin,latin-ext);
+	@import url(http://fonts.googleapis.com/css?family=Berkshire+Swash&subset=latin,latin-ext);
+	@import url(http://fonts.googleapis.com/css?family=Clicker+Script&subset=latin,latin-ext);
+	@import url(http://fonts.googleapis.com/css?family=Merienda:400,700&subset=latin,latin-ext);
+	
+*/
+
+	@font-face {
+	  font-family: 'Berkshire Swash';
+	  src: url('fonts/BerkshireSwash-Regular.ttf');
+	}
+
+
+/*
+ * General Formatting
+ *
+ */
+
+body {
+	/* background-image: url('map_section.png'); */
+	background-color: white;
+	font-family: "Berkshire Swash";
+	font-weight: 100;
+	font-size: 16px;
+	-webkit-text-stroke: 1px rgba(0, 0, 0, 0.1);
+}
+
+.tooltip {
+	font-size: 16px;
+}
+
+@media (max-width: 980px) {
+	body,
+	.tooltip {
+		font-size: 14px;
+	}
+}
+
+@media (max-width: 480px) {
+	body,
+	.tooltip {
+		font-size: 12px;
+	}
+}
+
+strong {
+	font-weight: bold;
+}
+
+p {
+	line-height: 1.5;
+}
+
+p img {
+	height: 1em;
+	vertical-align: bottom;
+}
+
+h1 {
+	font-size: 1.600em;
+}
+
+.borderized {
+	/* used to give a basic border */
+	border: 0.100em solid black;
+	border-radius: 0em; /* 0.400em */
+	box-shadow: 0 0 0.200em black;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+/*
+ * Vertical Positioning (z-index)
+ *
+ */
+
+#mastermap img
+{ z-index: 1; }
+/* Images of buildings are above the map. */
+
+map area
+{ z-index: 0; }
+/* Hyperlinks of these buildings are further above. */
+
+.status-bar,
+.tooltip-bar 
+{ z-index: 3; }
+/* The main navigation bars stand over the map and its contents. */
+
+.tooltip 
+{ z-index: 4; }
+/* The tooltip overlaps the normal tooltip bar. */
+
+
+/*
+ * Visible - Interface Bars
+ *
+ */
+
+.visible {
+	/* Used to format most bars. */
+	background-image: url('i/parchment.jpg');
+	background-size: cover;
+	padding: 0.500em 0.650em;
+	color: black;
+}
+
+/* Maximum size : */
+	.visible {
+		margin-right: 0.5%;
+		margin-left: 0.5%;
+		width: 99%;
+	}
+
+
+@media (max-width: 1200px) {
+	.visible {
+		margin-right: 1%;
+		margin-left: 1%;
+		width: 98%;
+	}
+}
+
+@media (max-width: 600px) {
+	.visible {
+		margin-right: 2%;
+		margin-left: 2%;
+		width: 96%;
+	}
+}
+
+
+/*
+ * Bars
+ *
+ */
+
+/*
+ * 1%
+ * 2.400em status-bar
+ *   
+ * 5.700em
+ * 1%
+ * 
+ * 
+ */
+
+.fixed-container {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+}
+
+
+.status-bar {
+	top: 1%;
+	min-height: 2.200em;
+	/*
+	 * 	borderized 2*0.100em
+	 *	padding 2*0.500em
+	 *  content 1.000em
+	 */
+	position: absolute;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.status-bar .menu {
+	height: 1.200em;
+	vertical-align: bottom;
+	position: absolute;
+	right: 0.800em;
+	top: 0.450em;
+}
+
+.menu-submenu {
+	display: none;
+	/* Displays only when menu is hovered. */
+	position: fixed;
+	color: black;
+	width: auto;
+	min-width: 10em;
+	right: 0.5%;
+}
+
+@media (max-width: 1200px) 	{.menu-submenu 	{right: 1%;}}
+@media (max-width: 600px) 	{.menu-submenu 	{right: 2%;}}
+
+.menu-submenu ul {
+	background-image: url('i/parchment.jpg');
+	background-size: 100%;
+	padding: 0.500em;
+	padding-left: 1em;
+	margin-top: 1em;
+	line-height: 1.5;
+}
+
+.status-bar .menu:hover + .menu-submenu,
+.menu-submenu:hover {
+	display: block;
+}
+
+
+/****************/
+/* Tooltip Area */
+/****************/
+
+.tooltip,
+.tooltip-bar {
+	bottom: 1%;
+	text-align: center;
+	vertical-align: middle;
+	position: absolute;	
+}
+
+.tooltip-bar {
+	display: block;
+}
+
+.tooltip {
+	display: none;
+	box-shadow: 0 0 0;
+}
+
+.visible table {
+	width: 100%;
+	margin-top: -0.100em;
+}
+
+/* Maximum size : */		 .visible table {height: 4.500em;}
+@media (max-width: 980px) 	{.visible table {height: 9.000em;}}
+@media (max-width: 480px) 	{.visible table {height: 13.500em;}}
+
+.visible td {
+	vertical-align: middle;
+	text-align: center;
+	line-height: 1.5;
+}
+
+.close-tooltip {
+	/* Styles the icon which closes a tooltip. */
+	height: 1em;
+	vertical-align: bottom;
+	position: absolute;
+	right: 0.450em;
+	top: 0.450em;
+}
+
+
+/*
+ * Map
+ *
+ */
+ 
+#mastermap {
+	font-size: 0px;
+	position: relative;
+	width: 2000px;
+	height: 1200px;
+	margin-left: auto;
+	margin-right: auto;
+	background-image: url('map.png');
+}
+
+
+#mastermap .line {
+	margin-bottom: -16px;
+}
+
+#mastermap .odd {
+	margin-left: 31px;
+}
+
+#mastermap .single {
+	height: 32px;
+	width: 62px;
+	margin-left: -15px;
+	display: inline-block;
+	position: absolute;
+}
+
+map {
+	position: absolute;
+}
+
+map:hover + .tooltip {
+	/* The tooltip is shown upon hover of the building. */
+	display: block;
+}
+
+map:hover + .fixed-container .tooltip {
+	/* The tooltip is shown upon hover of the building. */
+	display: block;
+}
+
+map:target + .tooltip {
+	/* The tooltip is shown upon click of the building. */
+	display: block;
+}
+
+/*
+ * Login - Audience with the King
+ *
+ */
+
+#audience-with-the-king {
+	margin-top: 40px;
+	padding: 30px;
+	max-width: 740px;
+	line-height: 1.8;
+	font-size: 16px;
+	overflow: auto;
+}
+
+#audience-with-the-king form {
+	font-family: "Clicker Script";
+	font-size: 22px;
+	margin-top: 5px;
+}
+
+.semi-div {
+	width: 48%;
+	float: left;
+}
+
+.in-between {
+	min-width: 4%;
+	float: left;
+}
