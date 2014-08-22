@@ -1,91 +1,104 @@
 <html>
 
 <head>
-<link rel="stylesheet" type="text/css" href="style.css" media="screen" />
-<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' /> <!-- Prevents autozoom on mobile devices -->
+
+	<title>Map</title>
+
+	<meta charset="utf-8">
+
+	<!-- Prevents autozoom on mobile devices -->
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' /> 
+
+	<link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+
+	<!-- Script to enable drag and scroll -->
+	<script type="text/javascript" src="drag-and-scroll/jquery-1.js"></script>
+	<script type="text/javascript" src="drag-and-scroll/scrollsync.js"></script>
+	<script type="text/javascript" src="drag-and-scroll/dragscrollable.js"></script>
+	<script type="text/javascript">
+		$(function() {
+		// Set drag scroll on first descendant of class dragger on both selected elements
+		$('#viewport').
+			dragscrollable({dragSelector: '.dragger:first', acceptPropagatedEvent: false});
+		});
+
+	</script>
+
 </head>
 
-
 <body>
-<!-- Top Status Bar & Bottom Tooltip Bar -->
 
-<div class="fixed-container">
+<div id="viewport">
 
-	<div class="status-bar visible borderized">
-		<p style="margin-top:auto; margin-bottom: auto; line-height: 1;"><strong>Brachamul</strong> | 430 &#8517; | Warning &#9888; | Coffee &#9749;</p>
-		<img class="menu" src="i/gear.svg">
-		<div class="menu-submenu">
-			<ul class="borderized">
-				<li>My Office</li>
-				<li>Sign Out</li>
-			</ul>
-		</div>
-	</div>
-
-
-	<div class="tooltip-bar visible borderized">
-		<table><tr><td>
-		Standing competitors : 12 &#9878; | Annual Product : 8203 &#8517;  | Time 	since arrival : 28 years
-		</td></tr></table>
-	</div>
-
-	<map id="1044-273" name="slot3">
-		<area href="#1044-273" shape="poly" coords="30,0,61,15,31,31,0,16" alt="Slot Name">
-	</map>
+	<div class="fixed-container">
 	
-	<div class="tooltip visible borderized">
-		<a href="#_"><img class="close-tooltip" src="i/cross.svg"></a>
-		<table><tr><td>
-			<h1>Workshop</h1>
-			Owned by Brachamul | 
-			Workers : 5 &#9874;
-		</td></tr></table>
-	</div>
-
-
-</div>
-
-
-<!-- Actual Content -->
-<div class="mastermap borderized">
-
-
-	<img class="single" style="margin-left: 1044; margin-top: 273;" src="slot.png" usemap="#slot3"/>
-
-
-	<img id="slot4" class="single" style="margin-left: 1092; margin-top: 300;" src="slot.png" usemap="#slot4"/>
-	<map name="slot4">
-		<area shape="poly" coords="30,0,61,15,31,31,0,16" alt="Slot Name" href="http://www.google.com">
-	</map>
-	<div class="fixed-container">
-		<div class="tooltip visible borderized">
-			<table><tr><td>
-				Slot 4 | Brachamul | &#9874; 5 | &#9203; 1h:5m:30s
-			</td></tr></table>
+		<!-- Top status bar -->
+		<div class="status-bar visible borderized">
+			<p style="margin-top:auto; margin-bottom: auto; line-height: 1;"><strong>Brachamul</strong> | 430 &#8517; | Warning &#9888; | Coffee &#9749;</p>
+			<img class="menu" src="i/gear.svg">
+			<div class="menu-submenu">
+				<ul class="borderized">
+					<li>My Office</li>
+					<li>Sign Out</li>
+				</ul>
+			</div>
 		</div>
-	</div>
 	
-	<img id="slot5" class="single" style="margin-left: 1077; margin-top: 358;" src="slot.png" usemap="#slot5"/>
-	<map name="slot5"><area shape="poly" coords="30,0,61,15,31,31,0,16" alt="Slot Name" href="http://www.google.com"></map>
-	<div class="fixed-container">
-		<div class="tooltip visible borderized">
+		<!-- Bottom tooltip bar -->
+		<div class="tooltip-bar visible borderized">
 			<table><tr><td>
-		Slot 5 | Brachamul | &#9874; 5 | &#9203; 1h:5m:30s
+			Standing competitors : 12 &#9878; | Annual Product : 8203 &#8517;  | Time 	since arrival : 28 years
 			</td></tr></table>
 		</div>
-	</div>
+	
+		<!-- Coordinates and shapes of map slot 3 -->
+		<map id="1044-273" name="slot3">
+			<area href="#1044-273" shape="poly" coords="30,0,61,15,31,31,0,16" alt="Slot Name">
+		</map>
 
-	<img id="slot6" class="single" style="margin-left: 1154; margin-top: 348;" src="slot.png" usemap="#slot6"/>
-	<map name="slot6"><area shape="poly" coords="30,0,61,15,31,31,0,16" alt="Slot Name" href="http://www.google.com"></map>
-	<div class="fixed-container">
+		<!-- Tooltip content for map slot 3 -->
 		<div class="tooltip visible borderized">
+			<a href="#_"><img class="close-tooltip" src="i/cross.svg"></a>
 			<table><tr><td>
-		Slot 6 | Brachamul | &#9874; 5 | &#9203; 1h:5m:30s
+				<h1>Workshop</h1>
+				Owned by Brachamul | 
+				Workers : 5 &#9874;
 			</td></tr></table>
 		</div>
+
+		<!-- Coordinates and shapes of map slot 4 -->
+		<map id="1000-300" name="slot4">
+			<area href="#1000-300" shape="poly" coords="30,0,61,15,31,31,0,16" alt="Slot Name">
+		</map>
+
+		<!-- Tooltip content for map slot 3 -->
+		<div class="tooltip visible borderized">
+			<a href="#_"><img class="close-tooltip" src="i/cross.svg"></a>
+			<table><tr><td>
+				<h1>Field</h1>
+				Owned by Brachamul | 
+				Workers : 3 &#9874;
+			</td></tr></table>
+		</div>
+	
+	</div> <!-- fixed-container -->
+
+
+
+	<div id="base" class="dragger mastermap">
+		<!-- Images for map slots -->
+		<img class="single" style="margin-left: 1044; margin-top: 273;" src="slot.png" usemap="#slot3"/>
+		<img class="single" style="margin-left: 1000; margin-top: 300;" src="slot.png" usemap="#slot4"/>
 	</div>
 
-</div>
+</div> <!-- viewport -->
+	
+</body></html>
+
+</head>
+<body>
+
+
 
 </body>
 </html>
