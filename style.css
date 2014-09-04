@@ -189,9 +189,9 @@ map area {
 	position: absolute;
 }
 
-							.active-tooltip-bar, .tooltip-bar {	height: 15vh; }
-@media (max-width: 980px) {	.active-tooltip-bar, .tooltip-bar {	height: 21vh; } }
-@media (max-width: 480px) {	.active-tooltip-bar, .tooltip-bar {	height: 30vh; } }
+							.active-tooltip-bar, .tooltip-bar {	height: 16vh; }
+@media (max-width: 980px) {	.active-tooltip-bar, .tooltip-bar {	height: 24vh; } }
+@media (max-width: 480px) {	.active-tooltip-bar, .tooltip-bar {	height: 40vh; } }
 
 
 .tooltip-bar {

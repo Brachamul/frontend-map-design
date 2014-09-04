@@ -9,10 +9,10 @@
 		}
 	
 		#viewport {
-			position: fixed;	/* to enable further positioned divs inside content area */
+			position: relative;	/* to enable further positioned divs inside content area */
 			background: lightgray;
 			width: 100%; height: 100%;
-			overflow: hidden;
+			overflow: auto;
 		}
 		
 		#base {
